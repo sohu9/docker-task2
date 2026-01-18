@@ -9,7 +9,7 @@
 - **Git/GitHub** (Source Code)
 
 ## 🌐 Live Access
-**EC2 Public URL**: http://13.127.142.69:8080 **[✅ LIVE]**
+**EC2 Public URL**: http://13.127.142.69 **[✅ LIVE]**
 
 ## 💻 GitHub Repository
 [**https://github.com/sohu9/docker-task-2**](https://github.com/sohu9/docker-task-2)
