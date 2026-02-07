@@ -1,53 +1,94 @@
-# Dockerized Web Application – Deployment & CI/CD 🚀
+# 🚀 Dockerized Web Application – Deployment & CI/CD
 
-## 📌 Overview
-This project is a **Dockerized static web application** deployed in two phases:
-
-- **Task‑2:** Manual Docker deployment on **AWS EC2** using NGINX.  
-- **Task‑3:** CI/CD automation using **GitHub Actions** and **Docker Hub**.
+A simple Dockerized static web application deployed step-by-step with manual AWS EC2 deployment and then automated using a CI/CD pipeline with GitHub Actions & Docker Hub.
 
 ---
 
-## 🧩 Task‑2 – Manual Deployment (AWS EC2)
+## 📌 Project Overview
 
-- Docker + NGINX setup on Ubuntu EC2.
-- Custom image built from a Dockerfile.
-- Port mapping configured (host `8080` → container `80`).
-- Container verified via browser and `curl`.
+This project is divided into two tasks:
 
-**Live URL (Task‑2):** `http://13.127.142.69`
+🔹 Task-2: Manual Docker Deployment (AWS EC2)  
+Deploy a Dockerized web app manually on an EC2 instance using NGINX.
 
----
-
-## 🔁 Task‑3 – CI/CD with GitHub Actions & Docker Hub
-
-**Goal:** Automatically build and push a Docker image on every push to the `main` branch.
-
-- Workflow file: `github/workflows/docker-ci.yml`
-- Pipeline steps:
-  - Checkout code
-  - Login to Docker Hub (using `DOCKER_USERNAME` and `DOCKER_PASSWORD` secrets)
-  - Build image: `sohu09/dockerized-web-app:latest`
-  - Push image to Docker Hub
-
-**Docker Hub Image:** `sohu09/dockerized-web-app:latest`
+🔹 Task-3: CI/CD Automation  
+Automate Docker image build & push using GitHub Actions and Docker Hub.
 
 ---
 
-## ▶️ Run the Dockerized Web App
+## 🧩 Task-2 – Manual Deployment on AWS EC2
 
-```bash
-docker login -u sohu09              # use Docker Hub access token as password
-docker pull sohu09/dockerized-web-app:latest
-docker run -d -p 80:80 sohu09/dockerized-web-app:latest
-Then open:
+### 🔧 What was done:
+- Launched an Ubuntu EC2 instance
+- Installed Docker
+- Created a Dockerfile using NGINX
+- Built a custom Docker image
+- Ran container with proper port mapping
 
-text
+### 🌐 Port Mapping
+Host Port → Container Port  
+8080 → 80
+
+### ✅ Verification
+- Application accessed via browser
+- Tested using curl
+
+### 🔗 Live URL (Task-2)
+http://13.127.142.69
+
+---
+
+## 🔁 Task-3 – CI/CD using GitHub Actions & Docker Hub
+
+### 🎯 Goal
+Automatically build and push Docker image on every push to the main branch.
+
+### 🛠 Tools Used
+- GitHub Actions
+- Docker Hub
+- Docker
+
+### 📂 Workflow File
+.github/workflows/docker-ci.yml
+
+### ⚙️ CI/CD Pipeline Steps
+1. Checkout repository code  
+2. Login to Docker Hub using secrets:
+   - DOCKER_USERNAME
+   - DOCKER_PASSWORD  
+3. Build Docker image  
+4. Push image to Docker Hub  
+
+### 🐳 Docker Image
+sohu09/dockerized-web-app:latest
+
+---
+
+## ▶️ Run the Dockerized Web Application Locally
+
+Steps:
+- docker login -u sohu09  
+  (Use Docker Hub access token as password)
+- docker pull sohu09/dockerized-web-app:latest
+- docker run -d -p 80:80 sohu09/dockerized-web-app:latest
+
+### 🌍 Open in Browser
 http://localhost
-📦 Repository
-Source code, Dockerfile, and CI workflow:
 
-text
+---
+
+## 📦 GitHub Repository
+
+Source code, Dockerfile, and CI/CD workflow:  
 https://github.com/sohu9/docker-task2
-Cloud Computing & DevOps – Task‑2 & Task‑3
-Student: Momin Shoaib Akhter ✅
+
+---
+
+## 🎓 Academic Info
+
+Cloud Computing & DevOps – Task-2 & Task-3  
+Student: Momin Shoaib Akhter ✅  
+
+---
+
+✨ This project demonstrates Docker fundamentals, AWS EC2 deployment, and CI/CD automation using GitHub Actions.
