@@ -1,38 +1,53 @@
-# Dockerized Web Application Deployment on AWS EC2 🚀 **✅ 100% COMPLETE**
+# Dockerized Web Application – Deployment & CI/CD 🚀
 
-## 📁 Technologies Used
-- **Docker** (Containerization)
-- **NGINX** (Web Server)
-- **AWS EC2** (Cloud Virtual Machine)
-- **Ubuntu Linux**
-- **HTML5 / CSS3**
-- **Git/GitHub** (Source Code)
+## 📌 Overview
+This project is a **Dockerized static web application** deployed in two phases:
 
-## 🌐 Live Access
-**EC2 Public URL**: http://13.127.142.69 **[✅ LIVE]**
-
-## 💻 GitHub Repository
-[**https://github.com/sohu9/docker-task-2**](https://github.com/sohu9/docker-task-2)
-
-## ✅ Deliverables Completed
-- [x] **EC2 instance** launched (Ubuntu)
-- [x] **Docker installed and verified**
-- [x] **Custom Docker image** created
-- [x] **NGINX web server** configured inside container
-- [x] **Static web application** containerized
-- [x] **Port mapping** configured (8080 → 80)
-- [x] **Docker container** running successfully
-- [x] **Application verified using browser**
-- [x] **Application verified using curl**
-- [x] **Source code pushed to GitHub**
-
-## 🚀 Deployment Summary
-This task demonstrates a complete **Docker-based deployment workflow** on a cloud virtual machine.  
-The application was containerized using Docker, served through NGINX, and deployed on **AWS EC2**, proving real-world DevOps deployment skills.
+- **Task‑2:** Manual Docker deployment on **AWS EC2** using NGINX.  
+- **Task‑3:** CI/CD automation using **GitHub Actions** and **Docker Hub**.
 
 ---
 
-**Cloud Computing & DevOps Task-2**  
-**Momin Shoaib Akhter**  
-**Submitted: Jan 2026**  
-**Status: ✅ FULLY COMPLETED**
+## 🧩 Task‑2 – Manual Deployment (AWS EC2)
+
+- Docker + NGINX setup on Ubuntu EC2.
+- Custom image built from a Dockerfile.
+- Port mapping configured (host `8080` → container `80`).
+- Container verified via browser and `curl`.
+
+**Live URL (Task‑2):** `http://13.127.142.69`
+
+---
+
+## 🔁 Task‑3 – CI/CD with GitHub Actions & Docker Hub
+
+**Goal:** Automatically build and push a Docker image on every push to the `main` branch.
+
+- Workflow file: `github/workflows/docker-ci.yml`
+- Pipeline steps:
+  - Checkout code
+  - Login to Docker Hub (using `DOCKER_USERNAME` and `DOCKER_PASSWORD` secrets)
+  - Build image: `sohu09/dockerized-web-app:latest`
+  - Push image to Docker Hub
+
+**Docker Hub Image:** `sohu09/dockerized-web-app:latest`
+
+---
+
+## ▶️ Run the Dockerized Web App
+
+```bash
+docker login -u sohu09              # use Docker Hub access token as password
+docker pull sohu09/dockerized-web-app:latest
+docker run -d -p 80:80 sohu09/dockerized-web-app:latest
+Then open:
+
+text
+http://localhost
+📦 Repository
+Source code, Dockerfile, and CI workflow:
+
+text
+https://github.com/sohu9/docker-task2
+Cloud Computing & DevOps – Task‑2 & Task‑3
+Student: Momin Shoaib Akhter ✅
